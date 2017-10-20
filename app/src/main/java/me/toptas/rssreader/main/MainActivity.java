@@ -80,9 +80,9 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
         String jill=rssItem.getUrl();
         String jill2=jill.replace("www.","");
-        contents.urlstrng(jill2);
-        Toast.makeText(getApplicationContext(),jill2,Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MainActivity.this, contents.class);
+        htmlextractpage.urlstrng(jill2);
+
+        Intent intent = new Intent(MainActivity.this, htmlextractpage.class);
         startActivity(intent);
     }
 
