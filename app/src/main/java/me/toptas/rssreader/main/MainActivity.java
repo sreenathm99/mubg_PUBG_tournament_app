@@ -77,10 +77,10 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     @Override
     public void onItemSelected(RssItem rssItem) {
 
-
+        String title=rssItem.getTitle();
         String jill=rssItem.getUrl();
         String jill2=jill.replace("www.","");
-        htmlextractpage.urlstrng(jill2);
+        htmlextractpage.urlstrng(jill2,title);
 
         Intent intent = new Intent(MainActivity.this, htmlextractpage.class);
         startActivity(intent);
