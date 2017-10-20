@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'idea'
+
+buildscript {
+
+    repositories {
+        maven { url 'https://jitpack.io' }
+
+    }
+}
+android {
+    useLibrary  'org.apache.http.legacy'
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "me.toptas.rssreader"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "IS_TESTING", "false"
+        }
+        staging {
+            buildConfigField "boolean", "IS_TESTING", "true"
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "IS_TESTING", "false"
+        }
+    }
+
+    sourceSets {
+        test.setRoot('src/test')
+
+        test {
+            assets.srcDir file('src/test/assets')
+        }
+    }
+}
+
+dependencies {
+    // App dependencies
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile('com.mikepenz:aboutlibraries:5.9.1@aar') {
+        transitive = true
+    }
+
+    // Test dependencies
+    testCompile "org.robolectric:robolectric:3.2.2", {
+        exclude group: 'com.google.guava', module: 'guava'
+    }
+
+    // Instrumentation test dependencies
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:customtabs:25.1.1'
+    compile 'com.google.dagger:dagger:2.0'
+    compile 'com.google.dagger:dagger-compiler:2.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    stagingCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+    }
+}

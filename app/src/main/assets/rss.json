@@ -1,0 +1,45 @@
+[
+  {
+    "i": 10001,
+    "n": "Home",
+    "l": "http://www.jobsforasians.com/feeds/posts/default?alt=rss"
+  },
+  {
+    "i": 1002,
+    "n": "UAE",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20UAE?alt=rss"
+  },
+  {
+    "i": 1003,
+    "n": "Kuwait",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20kuwait?alt=rss"
+  },
+  {
+    "i": 1004,
+    "n": "Oman",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Oman?alt=rss"
+  },
+  {
+    "i": 1005,
+    "n": "Qatar",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Qatar?alt=rss"
+  }
+,
+  {
+    "i": 1006,
+    "n": "Bahrain",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Bahrain?alt=rss"
+  }
+,
+  {
+    "i": 1007,
+    "n": "USA",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20USA?alt=rss"
+  }
+,
+  {
+    "i": 1008,
+    "n": "India",
+    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20India?alt=rss"
+  }
+]
