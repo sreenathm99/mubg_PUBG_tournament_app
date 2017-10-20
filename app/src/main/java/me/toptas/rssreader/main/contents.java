@@ -92,8 +92,9 @@ public class contents extends AppCompatActivity {
 
         protected void onPostExecute(String result) {
 
-            TextView awesome=(TextView)findViewById(R.id.textView);
-            awesome.setText(result);
+            //TextView awesome=(TextView)findViewById(R.id.textView);
+            //awesome.setText(result);
+
         }
     }
 }
