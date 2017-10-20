@@ -58,6 +58,20 @@ public class htmlextractpage extends AppCompatActivity {
 
                 }
 
+
+                //start link extract 
+                Elements links = doc.getElementsByAttributeValue("id", "applink");
+                for (Element link : links)
+                {
+                    // get the value from href attribute
+                    System.out.println("\nlink : " + link.attr("href"));
+                    System.out.println("text : " + link.text());
+                    String applylink = link.attr("href");
+                    String applylinktext = link.text();
+                }
+                //end link extratc
+
+
                 Elements description=doc.getElementsByAttributeValue("class","description");
                 for(Element element:description)
                 {
