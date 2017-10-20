@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.toptas.rssreader.main.contents">
+    tools:context="me.toptas.jobseasy.main.contents">
 
     <TextView
         android:id="@+id/textView"
