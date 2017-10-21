@@ -26,20 +26,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     public FirebaseMessagingService() {
     }
 
-    //START PUSH INSTALL
-    public void onTokenRefresh() {
-        // Get updated InstanceID token.
-        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-        Log.d(TAG, "Refreshed token: " + refreshedToken);
 
-        // TODO: Implement this method to send any registration to your app's servers.
-        sendRegistrationToServer(refreshedToken);
-    }
-    private void sendRegistrationToServer(String token) {
-        // Add custom implementation, as needed.
-    }
-
-    //END PUSH INSTALL
 
     //START PUSH MESSAGE
     @Override
