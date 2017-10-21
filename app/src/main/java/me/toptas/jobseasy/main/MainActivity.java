@@ -72,7 +72,25 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
+
+        subscribeToPushService();
     }
+
+
+    private void subscribeToPushService() {
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+
+        Log.d("AndroidBash", "Subscribed");
+        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+
+        // Log and toast
+        Log.d("AndroidBash", token);
+        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+    }
+
+
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
@@ -97,22 +115,11 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         super.onStart();
         mChromeTabsWrapper.bindCustomTabsService();
 
-        subscribeToPushService();
+
 
     }
 
-    private void subscribeToPushService() {
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
 
-        Log.d("AndroidBash", "Subscribed");
-        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-
-        // Log and toast
-        Log.d("AndroidBash", token);
-        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-    }
 
 
     @Override
