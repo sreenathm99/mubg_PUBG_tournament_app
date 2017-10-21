@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.RemoteMessage;
 
 import org.json.JSONException;
@@ -25,6 +26,22 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     public FirebaseMessagingService() {
     }
 
+    //START PUSH INSTALL
+    public void onTokenRefresh() {
+        // Get updated InstanceID token.
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d(TAG, "Refreshed token: " + refreshedToken);
+
+        // TODO: Implement this method to send any registration to your app's servers.
+        sendRegistrationToServer(refreshedToken);
+    }
+    private void sendRegistrationToServer(String token) {
+        // Add custom implementation, as needed.
+    }
+
+    //END PUSH INSTALL
+
+    //START PUSH MESSAGE
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // Check if message contains a data payload.
