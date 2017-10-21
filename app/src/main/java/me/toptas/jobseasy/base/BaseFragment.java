@@ -4,14 +4,22 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.NativeExpressAdView;
+import com.google.android.gms.ads.VideoController;
+import com.google.android.gms.ads.VideoOptions;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import me.toptas.jobseasy.R;
 import me.toptas.jobseasy.di.component.DaggerFragmentComponent;
 import me.toptas.jobseasy.di.component.FragmentComponent;
 import me.toptas.jobseasy.di.module.FragmentModule;
@@ -22,6 +30,8 @@ import me.toptas.jobseasy.model.RError;
  */
 
 public abstract class BaseFragment<T extends BaseMvpPresenter> extends Fragment implements BaseView {
+    private static String LOG_TAG = "EXAMPLE";
+
 
     @Inject
     T mPresenter;
@@ -35,6 +45,7 @@ public abstract class BaseFragment<T extends BaseMvpPresenter> extends Fragment 
                 .fragmentModule(new FragmentModule())
                 .build();
         injectDependencies();
+
     }
 
     @Nullable
@@ -45,6 +56,7 @@ public abstract class BaseFragment<T extends BaseMvpPresenter> extends Fragment 
         mPresenter.attach(this);
         init(savedInstanceState);
         return view;
+
     }
 
     @Override

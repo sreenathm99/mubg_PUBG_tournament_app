@@ -2,7 +2,7 @@ package me.toptas.jobseasy;
 
 import android.app.Application;
 
-import com.squareup.leakcanary.LeakCanary;
+
 
 import javax.inject.Inject;
 
@@ -21,7 +21,7 @@ public class RssApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LeakCanary.install(this);
+
 
         mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))

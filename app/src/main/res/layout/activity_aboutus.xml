@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="me.toptas.jobseasy.main.aboutus"
+    android:background="@drawable/background_colorabt"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="190dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text=" ©JobsEasy"
+
+        android:textAlignment="center"
+        android:textColor="@color/about_libraries_special_button_openSource_dark"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:fontFamily="cursive"
+        android:text="We are not recruiters.We just share job opportunities from all over the world.We just started.Keep stay with us... There are lots of amazing things waiting for you.   Thank You and All The Best!"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:layout_marginTop="50dp"
+        android:id="@+id/imageButton4"
+        android:layout_width="50dp"
+        android:layout_height="61dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/facebook"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"/>
+
+
+</LinearLayout>

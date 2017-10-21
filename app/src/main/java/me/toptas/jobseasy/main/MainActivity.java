@@ -5,6 +5,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.Window;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.NativeExpressAdView;
+import com.google.android.gms.ads.VideoController;
+import com.google.android.gms.ads.VideoOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +35,10 @@ import me.toptas.jobseasy.rss.RssFragmentAdapter;
 import me.toptas.jobseasy.util.FeedParser;
 
 public class MainActivity extends BaseActivity<MainContract.Presenter> implements MainContract.View, RssFragment.OnItemSelectListener {
+
+    private static String LOG_TAG = "EXAMPLE";
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
 
 
     @BindView(R.id.viewPager)
@@ -43,10 +60,23 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     @Override
     protected void init(@Nullable Bundle state) {
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
         setSupportActionBar(mToolbar);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
+    }
+
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
     }
 
     @Override
@@ -75,11 +105,29 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
     @Override
     public void onItemSelected(RssItem rssItem) {
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
-        String title=rssItem.getTitle();
-        String jill=rssItem.getUrl();
-        String jill2=jill.replace("www.","");
-        htmlextractpage.urlstrng(jill2,title);
+// Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(MainActivity.this);
+// Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.admob_interstitial_id));
+
+        interstitial.loadAd(adRequest);
+// Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                // Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
+
+        displayInterstitial();
+        String title = rssItem.getTitle();
+        String jill = rssItem.getUrl();
+        String jill2 = jill.replace("www.", "");
+        htmlextractpage.urlstrng(jill2, title);
 
         Intent intent = new Intent(MainActivity.this, htmlextractpage.class);
         startActivity(intent);
@@ -96,4 +144,23 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         RssFragmentAdapter adapter = new RssFragmentAdapter(getSupportFragmentManager(), fragmentList, titles);
         mViewPager.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.id_aboutus) {
+            Intent intent = new Intent(MainActivity.this, aboutus.class);
+            startActivity(intent);
+            return true;
+        }
+        return  true;
+    }
 }
+
+
