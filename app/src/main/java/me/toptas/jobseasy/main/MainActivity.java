@@ -18,8 +18,10 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.VideoController;
 import com.google.android.gms.ads.VideoOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +44,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     InterstitialAd mInterstitialAd;
     private InterstitialAd interstitial;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
@@ -67,14 +70,16 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-
         setSupportActionBar(mToolbar);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
 
 
-
+// Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mFirebaseAnalytics.setAnalyticsCollectionEnabled(true);
+        mFirebaseAnalytics.setMinimumSessionDuration(10000);
 
     }
 
