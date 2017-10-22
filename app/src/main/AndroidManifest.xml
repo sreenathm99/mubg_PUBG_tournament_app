@@ -36,7 +36,7 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/makefg" />
+            android:resource="@drawable/new_noti" />
     </application>
 
 
