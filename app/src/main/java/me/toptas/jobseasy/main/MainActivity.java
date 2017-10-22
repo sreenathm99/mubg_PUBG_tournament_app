@@ -75,6 +75,10 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
 
+        //subscribe to push news
+        FirebaseMessaging.getInstance().subscribeToTopic("NEWS");
+
+
 
 // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
