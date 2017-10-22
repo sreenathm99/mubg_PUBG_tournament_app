@@ -18,6 +18,8 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.VideoController;
 import com.google.android.gms.ads.VideoOptions;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +72,10 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
+
+
+
+
     }
 
     public void displayInterstitial() {
@@ -94,6 +100,9 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     protected void onStart() {
         super.onStart();
         mChromeTabsWrapper.bindCustomTabsService();
+
+
+
     }
 
     @Override
