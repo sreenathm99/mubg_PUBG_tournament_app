@@ -18,7 +18,9 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.NativeExpressAdView;
 import com.google.android.gms.ads.VideoController;
 import com.google.android.gms.ads.VideoOptions;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     InterstitialAd mInterstitialAd;
     private InterstitialAd interstitial;
 
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @BindView(R.id.viewPager)
     ViewPager mViewPager;
@@ -67,33 +70,18 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-
         setSupportActionBar(mToolbar);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         getPresenter().loadRssFragments();
 
-        subscribeToPushService();
 
-
-
+// Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mFirebaseAnalytics.setAnalyticsCollectionEnabled(true);
+        mFirebaseAnalytics.setMinimumSessionDuration(10000);
 
     }
-
-    private void subscribeToPushService() {
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-
-        Log.d("AndroidBash", "Subscribed");
-        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-
-        // Log and toast
-        Log.d("AndroidBash", token);
-        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-    }
-
-
 
     public void displayInterstitial() {
 // If Ads are loaded, show Interstitial else show nothing.
@@ -121,9 +109,6 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
 
 
     }
-
-
-
 
     @Override
     protected void onStop() {

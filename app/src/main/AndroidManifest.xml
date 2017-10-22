@@ -19,43 +19,25 @@
             </intent-filter>
         </activity>
         <activity android:name=".main.htmlextractpage" />
-        <activity
-            android:name=".main.MainActivity"
-            android:screenOrientation="sensor"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".main.MainActivity" />
         <activity android:name=".main.aboutus" />
-        <activity
-            android:name=".main.notresult"
-            android:screenOrientation="sensor"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="SOMEACTIVITY" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <service android:name=".main.FirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
         <service
             android:name=".main.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorAccent" />
+        <service
+            android:name=".main.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/makefg" />
     </application>
+
 
 </manifest>
