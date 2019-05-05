@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JobsEASY</string>
+    <string name="app_name">MUBG</string>
     <string name="ad_unit_id">ca-app-pub-5520803721516592/2258312232</string>
     <string name="banner_ad_unit_id">ca-app-pub-5520803721516592/9869386552</string>
     <string name="err_rss_no_item">An error occured. Please swipe down to refresh.</string>

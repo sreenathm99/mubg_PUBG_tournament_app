@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+
+
     </style>
 
     <style name="SelectableBackground">
@@ -13,4 +16,15 @@
 
     </style>
 
+    <style name="CustomTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name="colorPrimary">@color/colorPrimarynewtheme</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarknewtheme</item>
+    </style>
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/dot3</item>
+    </style>
 </resources>

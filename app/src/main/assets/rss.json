@@ -1,46 +1,18 @@
 [
   {
     "i": 1001,
-    "n": "Home",
-    "l": "http://www.jobsforasians.com/feeds/posts/default?alt=rss"
+    "n": "Upcoming Matches",
+    "l": "https://pubgkeralam.blogspot.com/feeds/posts/default/-/current?alt=rss"
   },
   {
     "i": 1002,
-    "n": "USA",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20USA?alt=rss"
+    "n": "Support",
+    "l": "https://pubgkeralam.blogspot.com/feeds/posts/default/-/more?alt=rss"
   }
 ,
   {
     "i": 1003,
-    "n": "UAE",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20UAE?alt=rss"
-  },
-  {
-    "i": 1004,
-    "n": "Kuwait",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20kuwait?alt=rss"
-  },
-  {
-    "i": 1005,
-    "n": "Oman",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Oman?alt=rss"
-  },
-  {
-    "i": 1006,
-    "n": "Qatar",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Qatar?alt=rss"
-  }
-,
-  {
-    "i": 1007,
-    "n": "Bahrain",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20Bahrain?alt=rss"
-  }
-,
-
-  {
-    "i": 1008,
-    "n": "India",
-    "l": "http://www.jobsforasians.com/feeds/posts/default/-/jobs%20in%20India?alt=rss"
+    "n": "Completed Matches",
+    "l": "https://pubgkeralam.blogspot.com/feeds/posts/default/-/completed?alt=rss"
   }
 ]

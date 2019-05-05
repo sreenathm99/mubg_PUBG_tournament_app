@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="me.mubg.tournament.main.aboutus"
+    android:background="#000"
+    android:orientation="vertical"
+>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/contact"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" For Quick Resolutions you can reach us through
+            below numbers."
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="191dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" +91 8156815115 \n
++91 9048991740 \n
++91 8129832162"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            android:textIsSelectable="true"/>
+
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="280dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" Join Our whatsapp / Telegram community "
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="290dp"
+            android:gravity="center"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp">
+
+            <ImageButton
+                android:id="@+id/whatsappbutton"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:background="#00000000"
+                app:srcCompat="@drawable/whatsapp" />
+            <ImageButton
+                android:id="@+id/telegrambutton"
+                android:layout_width="45dp"
+                android:layout_height="80dp"
+                android:background="#00000000"
+                app:srcCompat="@drawable/telegram"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

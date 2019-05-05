@@ -1,52 +1,45 @@
 {
   "project_info": {
-    "project_number": "480974154520",
-    "firebase_url": "https://jobseasy-a0e8c.firebaseio.com",
-    "project_id": "jobseasy-a0e8c",
-    "storage_bucket": "jobseasy-a0e8c.appspot.com"
+    "project_number": "203460391210",
+    "firebase_url": "https://mubg-tournament.firebaseio.com",
+    "project_id": "mubg-tournament",
+    "storage_bucket": "mubg-tournament.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:480974154520:android:7606b93e1a8f1e3b",
+        "mobilesdk_app_id": "1:203460391210:android:438a45215f35ff5c",
         "android_client_info": {
-          "package_name": "me.toptas.jobseasy"
+          "package_name": "me.mubg.tournament"
         }
       },
       "oauth_client": [
         {
-          "client_id": "480974154520-nnu3conftn2ps3befp1va71dmjcpsalq.apps.googleusercontent.com",
+          "client_id": "203460391210-4ohfoj7kb4j7stq11mkoq7fs4kstgfu8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "me.toptas.jobseasy",
+            "package_name": "me.mubg.tournament",
             "certificate_hash": "678a2eb30982cc14bbe550316f6c9bbb2a10d714"
           }
         },
         {
-          "client_id": "480974154520-k05rbsfsbl473akksfdvc3qt6saoienp.apps.googleusercontent.com",
+          "client_id": "203460391210-7m5aur1eo2aqqbdeq7gn053sdn1b6ut3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBAPEo2P0ZigIcE1vgJiZBuQCCb6nMF49I"
+          "current_key": "AIzaSyDqBm52bZAg2Fe4h81dUFXT4_rLQaFOMT0"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "480974154520-k05rbsfsbl473akksfdvc3qt6saoienp.apps.googleusercontent.com",
+              "client_id": "203460391210-7m5aur1eo2aqqbdeq7gn053sdn1b6ut3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

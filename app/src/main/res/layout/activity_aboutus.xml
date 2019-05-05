@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="me.toptas.jobseasy.main.aboutus"
+    tools:context="me.mubg.tournament.main.aboutus"
     android:background="@drawable/background_colorabt"
     android:orientation="vertical">
 
@@ -12,39 +12,83 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="190dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text=" ©JobsEasy"
 
+        android:text="An OMR production"
         android:textAlignment="center"
-        android:textColor="@color/about_libraries_special_button_openSource_dark"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/yellowmy"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif-smallcaps" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="©MUBG"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:fontFamily="cursive"
-        android:text="We are not recruiters.We just share job opportunities from all over the world.We just started.Keep stay with us... There are lots of amazing things waiting for you.   Thank You and All The Best!"
+        android:layout_marginTop="35dp"
+        android:text="We are 8 passionate engineering undergraduates behind the scene. More over , we are mallus with alarming amount of pubg praanth in our blood.While we were playing pubg ,we got struck up with the idea of earning by playing and hence decided to built an exclusive rendezvous for the mallu pubg players to compete and earn.From here you can actually bag payed chickendinners .So stay wild ,get yourself geared up for some solid matches and make money instantly."
         android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:textSize="18dp"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:fontFamily="monospace" />
 
-        android:textStyle="bold" />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Your Love on Our Social Handlers"
+        android:textColor="@color/white"
+        android:layout_marginTop="45dp"
+        android:textAlignment="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_gravity="center_horizontal">
     <ImageButton
-        android:layout_marginTop="50dp"
-        android:id="@+id/imageButton4"
-        android:layout_width="50dp"
-        android:layout_height="61dp"
+        android:id="@+id/facebookbutton"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
         android:background="#00000000"
         app:srcCompat="@drawable/facebook"
         android:layout_gravity="center"
-        android:adjustViewBounds="true"/>
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="95dp"/>
+        <ImageButton
+            android:id="@+id/youtubebutton"
+            android:layout_width="45dp"
+            android:layout_height="80dp"
+            android:background="#00000000"
+            app:srcCompat="@drawable/youtube"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            />
+    <ImageButton
+        android:id="@+id/instagrambutton"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/instagram"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        />
 
+    </LinearLayout>
 
 </LinearLayout>
